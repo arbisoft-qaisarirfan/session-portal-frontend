@@ -64,6 +64,9 @@ export default function LoginPage() {
   };
 
   const googleLoginHandler = useGoogleLogin({
+    onNonOAuthError() {
+      setIsLoading(false);
+    },
     onSuccess: (response) => onSuccess(response as CredentialResponse),
     onError: onError,
   });
@@ -71,7 +74,7 @@ export default function LoginPage() {
   return (
     <LoginContainer>
       <LoginSubContainer>
-        <Image height={33} width={131} src="/assets/images/arbisoft-logo.png" alt="arbisoft-logo" />
+        <Image height={33} width={131} src="/assets/images/arbisoft-logo.png" alt="arbisoft-logo" data-testid="logo" />
         <LoginButtonContainer>
           <Button
             data-testid="login-button"

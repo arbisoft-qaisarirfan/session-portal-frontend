@@ -15,6 +15,7 @@ import { useTheme } from "@mui/material/styles";
 import Toolbar from "@mui/material/Toolbar";
 import Tooltip from "@mui/material/Tooltip";
 import Typography from "@mui/material/Typography";
+import { googleLogout } from "@react-oauth/google";
 import { useSearchParams } from "next/navigation";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -54,6 +55,7 @@ function Navbar({ onDrawerToggle, shouldShowDrawer = false }: { onDrawerToggle?:
   };
 
   const handleLogout = async () => {
+    googleLogout();
     dispatch(loginActions.logout());
     await persistor.purge();
     persistor.persist();
