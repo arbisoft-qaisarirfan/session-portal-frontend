@@ -1,10 +1,11 @@
 import js from "@eslint/js";
 import nextPlugin from "@next/eslint-plugin-next";
-import { defineConfig } from "eslint/config";
+import { defineConfig, globalIgnores } from "eslint/config";
 import importPlugin from "eslint-plugin-import";
 import prettierPlugin from "eslint-plugin-prettier";
 import reactPlugin from "eslint-plugin-react";
 import reactHooksPlugin from "eslint-plugin-react-hooks";
+import storybook from "eslint-plugin-storybook";
 import globals from "globals";
 import tseslint from "typescript-eslint";
 
@@ -12,9 +13,17 @@ export default defineConfig([
   js.configs.recommended,
   ...tseslint.configs.recommended,
   reactPlugin.configs.flat.recommended,
-  {
-    ignores: [".next/", "node_modules/", "dist/", "build/", "coverage/", "public/", "next-env.d.ts"],
-  },
+  globalIgnores([
+    ".next/",
+    "node_modules/",
+    "dist/",
+    "build/",
+    "coverage/",
+    "public/",
+    "next-env.d.ts",
+    "jest.config.js",
+    "jest.setup,js",
+  ]),
   {
     files: ["**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"],
 
@@ -268,4 +277,5 @@ export default defineConfig([
       "@typescript-eslint/no-require-imports": "off",
     },
   },
+  ...storybook.configs["flat/recommended"],
 ]);

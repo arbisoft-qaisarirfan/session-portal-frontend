@@ -24,7 +24,10 @@ const VideoPicker: FC<{ onFileSelect: (val: File | undefined) => void }> = ({ on
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
     if (file && !isVideoFile(file)) {
-      notification.showNotification({ message: "Only MP4, MOV, AVI, and WebM video files are allowed", severity: "error" });
+      notification.showNotification({
+        message: "Only MP4, MOV, AVI, and WebM video files are allowed",
+        severity: "error",
+      });
     } else {
       onFileSelect(file);
     }
@@ -37,7 +40,10 @@ const VideoPicker: FC<{ onFileSelect: (val: File | undefined) => void }> = ({ on
 
     const file = event.dataTransfer.files?.[0];
     if (file && !isVideoFile(file)) {
-      notification.showNotification({ message: "Only MP4, MOV, AVI, and WebM video files are allowed", severity: "error" });
+      notification.showNotification({
+        message: "Only MP4, MOV, AVI, and WebM video files are allowed",
+        severity: "error",
+      });
     } else {
       onFileSelect(file);
     }

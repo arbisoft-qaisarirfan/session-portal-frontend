@@ -1,5 +1,5 @@
 import { faker } from "@faker-js/faker";
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/nextjs-vite";
 
 import { VideoCardProps } from "./types";
 import VideoCard from "./videoCard";
@@ -40,7 +40,7 @@ type Story = StoryObj<VideoCardProps>;
 const mockVideoData = {
   event_time: "2023-10-01 14:30",
   organizer: "Sample Organizer",
-  thumbnail: faker.image.urlLoremFlickr({ width: 500, height: 500, category: "animals" }),
+  thumbnail: faker.image.url({ width: 500, height: 500 }),
   title: "Sample Video Title",
   video_duration: "10:30",
   description: "This is a sample video description. It can be a long text that describes the video in detail.",

@@ -40,7 +40,10 @@ class NotificationManager {
   private listeners: Array<(state: NotificationState) => void> = [];
 
   public showNotification(payload: Omit<Notification, "open">) {
-    this.state = notificationReducer(this.state, { type: "SHOW_NOTIFICATION", payload });
+    this.state = notificationReducer(this.state, {
+      type: "SHOW_NOTIFICATION",
+      payload,
+    });
     this.notifyListeners();
   }
 
@@ -88,7 +91,10 @@ export const NotificationProvider: React.FC<{ children: ReactNode }> = ({ childr
         open={state.open}
         autoHideDuration={3000}
         onClose={() => notificationManager.hideNotification()}
-        anchorOrigin={{ vertical: state.vertical ?? "top", horizontal: state.horizontal || "right" }}
+        anchorOrigin={{
+          vertical: state.vertical ?? "top",
+          horizontal: state.horizontal || "right",
+        }}
       >
         <MuiAlert variant="filled" onClose={() => notificationManager.hideNotification()} severity={state.severity}>
           {state.message}

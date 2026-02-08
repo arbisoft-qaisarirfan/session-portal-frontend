@@ -176,7 +176,10 @@ const VideosListingPage = () => {
       <FilterBox>
         <Stack
           direction={{ xs: "column", sm: "row" }}
-          sx={{ alignItems: { sm: "center" }, justifyContent: { sm: "space-between" } }}
+          sx={{
+            alignItems: { sm: "center" },
+            justifyContent: { sm: "space-between" },
+          }}
         >
           <Typography variant="h2" sx={{ paddingBottom: { xs: 2 } }}>
             {getPageTitle()}

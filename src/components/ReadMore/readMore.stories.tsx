@@ -1,5 +1,5 @@
 import { faker } from "@faker-js/faker";
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/nextjs-vite";
 
 import ReadMore from "./readMore";
 import { ReadMoreProps } from "./types";

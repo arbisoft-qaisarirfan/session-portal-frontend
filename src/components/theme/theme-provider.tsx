@@ -82,9 +82,21 @@ function ThemeProvider(props: PropsWithChildren<{ customTheme?: Theme }>) {
             h4: { fontSize: pxToRem(20) },
             h5: { fontSize: pxToRem(16) },
             h6: { fontSize: pxToRem(12) },
-            bodySmall: { ...defaultTheme.typography.body1, fontSize: pxToRem(12), fontFamily },
-            bodyMedium: { ...defaultTheme.typography.body1, fontSize: pxToRem(14), fontFamily },
-            bodyLarge: { ...defaultTheme.typography.body1, fontSize: pxToRem(16), fontFamily },
+            bodySmall: {
+              ...defaultTheme.typography.body1,
+              fontSize: pxToRem(12),
+              fontFamily,
+            },
+            bodyMedium: {
+              ...defaultTheme.typography.body1,
+              fontSize: pxToRem(14),
+              fontFamily,
+            },
+            bodyLarge: {
+              ...defaultTheme.typography.body1,
+              fontSize: pxToRem(16),
+              fontFamily,
+            },
           },
           components: {
             MuiTypography: {

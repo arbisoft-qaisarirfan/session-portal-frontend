@@ -1,4 +1,4 @@
-import { Meta, StoryFn } from "@storybook/react";
+import { Meta, StoryFn } from "@storybook/nextjs-vite";
 
 import Select from "./select";
 import { SelectProps } from "./types";

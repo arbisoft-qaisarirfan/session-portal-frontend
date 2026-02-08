@@ -145,7 +145,9 @@ describe("Navbar Component", () => {
     const searchInput = screen.getByPlaceholderText("Search...");
     fireEvent.change(searchInput, { target: { value: "some test search" } });
     fireEvent.submit(searchInput.closest("form")!);
-    expect(mockNavigateTo).toHaveBeenCalledWith("searchResult", { search: "some test search" });
+    expect(mockNavigateTo).toHaveBeenCalledWith("searchResult", {
+      search: "some test search",
+    });
   });
 
   test("should display tooltip on avatar button hover", async () => {

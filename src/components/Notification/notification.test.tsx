@@ -11,7 +11,16 @@ const TestComponent = () => {
 
   return (
     <div>
-      <button onClick={() => notifier.showNotification({ message: "Test Alert", severity: "success" })}>Show Notification</button>
+      <button
+        onClick={() =>
+          notifier.showNotification({
+            message: "Test Alert",
+            severity: "success",
+          })
+        }
+      >
+        Show Notification
+      </button>
     </div>
   );
 };

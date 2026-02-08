@@ -3,7 +3,7 @@ import { FC } from "react";
 
 import Button from "@mui/material/Button";
 import { SnackbarOrigin } from "@mui/material/Snackbar";
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/nextjs-vite";
 
 import { NotificationProvider, useNotification } from "./notification";
 
@@ -17,10 +17,10 @@ export default meta;
 
 type Story = StoryObj<typeof NotificationProvider>;
 
-const NotificationDemo: FC<{ vertical?: SnackbarOrigin["vertical"]; horizontal?: SnackbarOrigin["horizontal"] }> = ({
-  vertical = "top",
-  horizontal = "right",
-}) => {
+const NotificationDemo: FC<{
+  vertical?: SnackbarOrigin["vertical"];
+  horizontal?: SnackbarOrigin["horizontal"];
+}> = ({ vertical = "top", horizontal = "right" }) => {
   const notificationManager = useNotification();
 
   const showNotification = (severity: "success" | "error" | "warning" | "info") => {

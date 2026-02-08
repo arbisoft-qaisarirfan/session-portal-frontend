@@ -108,7 +108,7 @@ describe("VideoCard", () => {
     );
 
     const card = screen.getByTestId("video-card");
-    expect(getComputedStyle(card).backgroundColor).toBe("transparent");
+    expect(getComputedStyle(card).backgroundColor).toBe("rgba(0, 0, 0, 0)");
   });
 
   it("should apply correct background color in dark mode", () => {
@@ -120,7 +120,7 @@ describe("VideoCard", () => {
     );
 
     const card = screen.getByTestId("video-card");
-    expect(getComputedStyle(card).backgroundColor).toBe("transparent");
+    expect(getComputedStyle(card).backgroundColor).toBe("rgba(0, 0, 0, 0)");
   });
 
   it("should plays video on hover and resets on leave (if not on mobile)", () => {

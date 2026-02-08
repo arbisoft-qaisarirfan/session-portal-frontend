@@ -127,7 +127,14 @@ function Navbar({ onDrawerToggle, shouldShowDrawer, isDrawerOpen = false }: Navb
           )}
           <Logo data-testid="navbar-logo" href="/videos" aria-label="Go to videos homepage">
             <Image src={"/assets/images/apple-icon.png"} width={24} height={24} alt="Arbisoft logo" data-testid="arbisoftLogo" />
-            <Typography variant="h6" noWrap sx={{ display: { xs: "none", md: "flex" }, marginLeft: theme.spacing(1) }}>
+            <Typography
+              variant="h6"
+              noWrap
+              sx={{
+                display: { xs: "none", md: "flex" },
+                marginLeft: theme.spacing(1),
+              }}
+            >
               Arbisoft Sessions Portal
             </Typography>
           </Logo>
@@ -136,7 +143,14 @@ function Navbar({ onDrawerToggle, shouldShowDrawer, isDrawerOpen = false }: Navb
             <Search onSubmit={handleSearch} role="search" aria-label="Search sessions" data-testid="navbar-search-form">
               <label
                 htmlFor="navbar-search-input"
-                style={{ position: "absolute", left: -9999, top: "auto", width: 1, height: 1, overflow: "hidden" }}
+                style={{
+                  position: "absolute",
+                  left: -9999,
+                  top: "auto",
+                  width: 1,
+                  height: 1,
+                  overflow: "hidden",
+                }}
               >
                 Search sessions
               </label>

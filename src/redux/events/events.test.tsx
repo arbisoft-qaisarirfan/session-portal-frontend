@@ -35,7 +35,13 @@ describe("eventsApi endpoints", () => {
     );
 
     const { result } = renderHook(
-      () => useGetEventsQuery({ event_type: "SESSION", page: 1, status: "PUBLISHED", is_featured: true }),
+      () =>
+        useGetEventsQuery({
+          event_type: "SESSION",
+          page: 1,
+          status: "PUBLISHED",
+          is_featured: true,
+        }),
       {
         wrapper: ({ children }) => <Providers>{children}</Providers>,
       }
@@ -97,7 +103,13 @@ describe("eventsApi endpoints", () => {
     fetchMock.mockResponseOnce(JSON.stringify(initialResponse));
 
     const { result, rerender } = renderHook(
-      ({ page }) => useGetEventsQuery({ event_type: "SESSION", page, status: "PUBLISHED", is_featured: true }),
+      ({ page }) =>
+        useGetEventsQuery({
+          event_type: "SESSION",
+          page,
+          status: "PUBLISHED",
+          is_featured: true,
+        }),
       {
         wrapper: ({ children }) => <Providers>{children}</Providers>,
         initialProps: { page: 1 },
@@ -121,7 +133,13 @@ describe("eventsApi endpoints", () => {
 
     const { result, rerender } = renderHook(
       ({ is_featured }) =>
-        useGetEventsQuery({ event_type: "SESSION", page: 1, status: "PUBLISHED", is_featured, search: "test" }),
+        useGetEventsQuery({
+          event_type: "SESSION",
+          page: 1,
+          status: "PUBLISHED",
+          is_featured,
+          search: "test",
+        }),
       {
         wrapper: ({ children }) => <Providers>{children}</Providers>,
         initialProps: { is_featured: true },

@@ -5,7 +5,7 @@ import Box from "@mui/material/Box";
 import MuiButton from "@mui/material/Button";
 import Grid from "@mui/material/Grid";
 import { useTheme } from "@mui/material/styles";
-import { Meta } from "@storybook/react";
+import { Meta } from "@storybook/nextjs-vite";
 import chunk from "lodash/chunk";
 import startCase from "lodash/startCase";
 
@@ -32,7 +32,13 @@ const createButtonProps = (buttonType: "normal" | "icon", options?: Partial<Butt
   }) as ButtonProps;
 
 const createIconButtonProps = (icon: ReactNode, options?: Partial<ButtonProps>): ButtonProps =>
-  ({ buttonType: "icon", children: icon, color: "primary", variant: "contained", ...options }) as ButtonProps;
+  ({
+    buttonType: "icon",
+    children: icon,
+    color: "primary",
+    variant: "contained",
+    ...options,
+  }) as ButtonProps;
 
 const normal: ButtonProps = createButtonProps("normal");
 
@@ -110,7 +116,13 @@ const ColorComponent: FC<{
 
   return (
     <Box>
-      <Box sx={{ marginBottom: theme.spacing(1.25), gap: theme.spacing(0.5), display: "flex" }}>
+      <Box
+        sx={{
+          marginBottom: theme.spacing(1.25),
+          gap: theme.spacing(0.5),
+          display: "flex",
+        }}
+      >
         {tabsData.map((tab) => (
           <MuiButton
             color="warning"

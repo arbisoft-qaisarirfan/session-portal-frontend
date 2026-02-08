@@ -38,7 +38,10 @@ const customBaseQuery: BaseQueryFn<FetchArgs, unknown, FetchBaseQueryError, Extr
 
     if (options.showErrorToast) {
       const errors = parseError(result.error.data, result.error.status);
-      notificationManager.showNotification({ message: errors[0].message, severity: "error" });
+      notificationManager.showNotification({
+        message: errors[0].message,
+        severity: "error",
+      });
     }
   }
 

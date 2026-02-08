@@ -127,7 +127,11 @@ describe("Sidebar Component", () => {
   });
 
   it("should render loading skeleton when data is loading", async () => {
-    (useSidebar as jest.Mock).mockReturnValue({ playlists: [], arePlaylistsLoading: true, tags: [] });
+    (useSidebar as jest.Mock).mockReturnValue({
+      playlists: [],
+      arePlaylistsLoading: true,
+      tags: [],
+    });
 
     customRender(<Sidebar />);
 
@@ -172,7 +176,11 @@ describe("Sidebar Component", () => {
   });
 
   it("should allow menu item click when only one item exists", () => {
-    (useSidebar as jest.Mock).mockReturnValue({ playlists: [], tags: [], arePlaylistsLoading: false });
+    (useSidebar as jest.Mock).mockReturnValue({
+      playlists: [],
+      tags: [],
+      arePlaylistsLoading: false,
+    });
     customRender(<Sidebar />);
     const item = screen.getByTestId("sidebar-item-All");
     fireEvent.click(item);

@@ -49,7 +49,10 @@ export function generateYearList(startYear: number) {
   const years = [];
 
   for (let year = currentYear; year >= startYear; year--) {
-    years.push({ value: year.toString(), label: year === currentYear ? "This Year" : year.toString() });
+    years.push({
+      value: year.toString(),
+      label: year === currentYear ? "This Year" : year.toString(),
+    });
   }
 
   return years;

@@ -1,11 +1,8 @@
-import React from "react";
-
 import CssBaseline from "@mui/material/CssBaseline";
-import type { Preview } from "@storybook/react";
-import { themes } from "@storybook/theming";
+import { type Preview } from "@storybook/nextjs-vite";
 
-import ThemeProvider from "../src/components/theme/theme-provider";
-import { Providers } from "../src/redux/store/provider";
+import ThemeProvider from "@/components/theme/theme-provider";
+import { Providers } from "@/redux/store/provider";
 
 const preview: Preview = {
   decorators: [
@@ -27,11 +24,16 @@ const preview: Preview = {
         date: /Date$/i,
       },
     },
-    docs: {
-      theme: themes.dark,
+
+    a11y: {
+      // 'todo' - show a11y violations in the test UI only
+      // 'error' - fail CI on a11y violations
+      // 'off' - skip a11y checks entirely
+      test: "todo",
     },
+
     nextjs: {
-      appDirectory: true,
+      appDirectory: true, // 👈 Set this
     },
   },
 };

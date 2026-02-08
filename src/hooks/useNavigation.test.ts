@@ -60,12 +60,16 @@ describe("useNavigation", () => {
     const { result } = renderHook(() => useNavigation());
     result.current.navigateTo("videoDetail", { id: "test-video-slug" });
 
-    expect(mockPush).toHaveBeenCalledWith("/videos/test-video-slug", { scroll: true });
+    expect(mockPush).toHaveBeenCalledWith("/videos/test-video-slug", {
+      scroll: true,
+    });
   });
 
   it("should call router.push with query parameters", () => {
     const { result } = renderHook(() => useNavigation());
     result.current.navigateTo("searchResult", { q: "example" });
-    expect(mockPush).toHaveBeenCalledWith("/videos/results?q=example", { scroll: true });
+    expect(mockPush).toHaveBeenCalledWith("/videos/results?q=example", {
+      scroll: true,
+    });
   });
 });

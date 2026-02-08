@@ -3,7 +3,7 @@ import { gte } from "semver";
 
 import { FEATURE_FLAGS } from "@/constants/featureFlags";
 
-import packageFile from "../../package.json";
+const version = process.env.npm_package_version || "0.0.0";
 
 type FeatureFlag = {
   enabled: boolean;
@@ -29,7 +29,7 @@ export const getFeatureFlags = (query: Record<string, string | string[] | undefi
     if (urlFeatureValue === "false") return false;
 
     // Check feature flag configuration and package version
-    return feature.enabled && gte(packageFile.version, feature.minVersion || "0.0.0");
+    return feature.enabled && gte(version, feature.minVersion || "0.0.0");
   };
 
   return { isFeatureEnabled, flags };

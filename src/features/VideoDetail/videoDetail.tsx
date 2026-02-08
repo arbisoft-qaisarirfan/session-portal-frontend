@@ -83,7 +83,14 @@ const VideoDetail = () => {
             components={{
               Footer: () =>
                 isRecommendationsFetching ? (
-                  <Box mt={2} sx={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+                  <Box
+                    mt={2}
+                    sx={{
+                      display: "flex",
+                      flexDirection: "column",
+                      gap: "16px",
+                    }}
+                  >
                     {Array.from({ length: 3 }).map((_, idx) => (
                       <Skeleton key={idx} variant="rounded" width="100%" height={90} />
                     ))}

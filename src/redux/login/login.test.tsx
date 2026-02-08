@@ -174,7 +174,13 @@ describe("Login API and Slice", () => {
       error: null,
       isLoading: false,
     };
-    await store.dispatch(eventsApi.endpoints.getEvents.initiate({ event_type: "SESSION", page: 1, status: "PUBLISHED" }));
+    await store.dispatch(
+      eventsApi.endpoints.getEvents.initiate({
+        event_type: "SESSION",
+        page: 1,
+        status: "PUBLISHED",
+      })
+    );
 
     expect(store.getState().login).toEqual(initialState);
   });

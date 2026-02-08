@@ -22,7 +22,10 @@ describe("Redux Store", () => {
   });
 
   it("should reset state on logout", () => {
-    store.dispatch({ type: "login/someAction", payload: { session: "testSession" } });
+    store.dispatch({
+      type: "login/someAction",
+      payload: { session: "testSession" },
+    });
     expect(store.getState().login).toBeDefined();
     store.dispatch(loginActions.logout());
     expect(store.getState().login).toEqual({
